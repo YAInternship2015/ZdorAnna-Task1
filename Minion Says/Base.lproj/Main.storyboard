@@ -19,14 +19,17 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HIh-Dm-eTD" id="ehq-7C-3N5">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKz-hy-2dy">
-                                            <rect key="frame" x="91" y="8" width="221" height="63"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKz-hy-2dy">
+                                            <rect key="frame" x="94" y="5" width="221" height="63"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="221" id="J5c-Tn-zOd"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="adj-OX-O6g">
-                                            <rect key="frame" x="8" y="8" width="63" height="63"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="adj-OX-O6g">
+                                            <rect key="frame" x="5" y="5" width="69" height="69"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="adj-OX-O6g" secondAttribute="height" multiplier="1:1" id="Yrk-cZ-SLe"/>
                                             </constraints>
@@ -36,8 +39,9 @@
                                         <constraint firstAttribute="centerY" secondItem="adj-OX-O6g" secondAttribute="centerY" id="VfN-7m-1ho"/>
                                         <constraint firstItem="adj-OX-O6g" firstAttribute="top" secondItem="ehq-7C-3N5" secondAttribute="top" constant="5" id="Yb6-Xe-a9e"/>
                                         <constraint firstAttribute="bottom" secondItem="adj-OX-O6g" secondAttribute="bottom" constant="5" id="gNn-a0-nhz"/>
-                                        <constraint firstItem="lKz-hy-2dy" firstAttribute="centerY" secondItem="adj-OX-O6g" secondAttribute="centerY" id="hSa-nK-11X"/>
+                                        <constraint firstItem="lKz-hy-2dy" firstAttribute="centerY" secondItem="adj-OX-O6g" secondAttribute="centerY" constant="-3" id="hSa-nK-11X"/>
                                         <constraint firstItem="adj-OX-O6g" firstAttribute="leading" secondItem="ehq-7C-3N5" secondAttribute="leading" constant="5" id="heh-y9-ZZi"/>
+                                        <constraint firstItem="lKz-hy-2dy" firstAttribute="top" secondItem="adj-OX-O6g" secondAttribute="top" id="jTr-vt-NUM"/>
                                         <constraint firstItem="lKz-hy-2dy" firstAttribute="leading" secondItem="adj-OX-O6g" secondAttribute="trailing" constant="20" id="tr3-G6-o6S"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -52,11 +56,14 @@
                             <outlet property="delegate" destination="MLy-BI-l6K" id="gfA-9S-HaO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Minion Says" id="mUy-Bb-aaB"/>
+                    <navigationItem key="navigationItem" title="Minion Says" id="mUy-Bb-aaB">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="NuC-rT-bhg"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="S7B-B1-rJd"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbS-W7-EDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="368" y="317"/>
+            <point key="canvasLocation" x="368" y="316.99999999999994"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nqt-If-m2N">
@@ -72,7 +79,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AG4-s4-7q2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-69.333333333333329" y="317.13333333333333"/>
+            <point key="canvasLocation" x="-69.333333333333329" y="317.13333333333327"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
