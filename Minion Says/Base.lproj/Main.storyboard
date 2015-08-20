@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jRY-6f-vng">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Minion Says-->
+        <scene sceneID="Tuk-8n-4yL">
+            <objects>
+                <tableViewController id="MLy-BI-l6K" customClass="MSViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="MHa-jG-iuS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="MSContentCellIdentifier" selectionStyle="default" indentationWidth="10" reuseIdentifier="MSContentCellIdentifier" rowHeight="80" id="HIh-Dm-eTD" customClass="MSContentCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HIh-Dm-eTD" id="ehq-7C-3N5">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKz-hy-2dy">
+                                            <rect key="frame" x="91" y="8" width="221" height="63"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="adj-OX-O6g">
+                                            <rect key="frame" x="8" y="8" width="63" height="63"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="adj-OX-O6g" secondAttribute="height" multiplier="1:1" id="Yrk-cZ-SLe"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="adj-OX-O6g" secondAttribute="centerY" id="VfN-7m-1ho"/>
+                                        <constraint firstItem="adj-OX-O6g" firstAttribute="top" secondItem="ehq-7C-3N5" secondAttribute="top" constant="5" id="Yb6-Xe-a9e"/>
+                                        <constraint firstAttribute="bottom" secondItem="adj-OX-O6g" secondAttribute="bottom" constant="5" id="gNn-a0-nhz"/>
+                                        <constraint firstItem="lKz-hy-2dy" firstAttribute="centerY" secondItem="adj-OX-O6g" secondAttribute="centerY" id="hSa-nK-11X"/>
+                                        <constraint firstItem="adj-OX-O6g" firstAttribute="leading" secondItem="ehq-7C-3N5" secondAttribute="leading" constant="5" id="heh-y9-ZZi"/>
+                                        <constraint firstItem="lKz-hy-2dy" firstAttribute="leading" secondItem="adj-OX-O6g" secondAttribute="trailing" constant="20" id="tr3-G6-o6S"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contentImage" destination="adj-OX-O6g" id="ebb-XA-JIA"/>
+                                    <outlet property="contentText" destination="lKz-hy-2dy" id="lAQ-3Z-UTR"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MLy-BI-l6K" id="1dK-Fb-nbz"/>
+                            <outlet property="delegate" destination="MLy-BI-l6K" id="gfA-9S-HaO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Minion Says" id="mUy-Bb-aaB"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NbS-W7-EDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="368" y="317"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nqt-If-m2N">
+            <objects>
+                <navigationController id="jRY-6f-vng" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cjr-m3-lWJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="MLy-BI-l6K" kind="relationship" relationship="rootViewController" id="eX7-6M-8oN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AG4-s4-7q2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-69.333333333333329" y="317.13333333333333"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
