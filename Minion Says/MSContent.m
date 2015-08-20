@@ -14,6 +14,7 @@
              andText:(NSString *)text{
     self = [super init];
     if (self)
+#warning открывающуюся скобку оставляйте на той же строке, что и имя метода, if или else и др.
     {
         _image = image;
         _text = text;

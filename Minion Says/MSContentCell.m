@@ -21,6 +21,7 @@ NSString* const MSContentCellIdentifier = @"MSContentCellIdentifier";
 @implementation MSContentCell
 
 - (void)setContent:(MSContent *)content {
+#warning отступ в две табуляции вместо одной
         self.contentText.text = content.text;
         self.contentImage.image = content.image;
 }

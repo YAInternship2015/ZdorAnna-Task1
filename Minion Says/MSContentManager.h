@@ -12,6 +12,7 @@
 @interface MSContentManager : NSObject
 
 + (MSContentManager *) managerWithSetOfContent;
+#warning - (MSContent *)contentAtIndex:(NSInteger)index; и по аналогии все остальные методы класса
 - (MSContent *) contentAtIndex: (NSInteger) index;
 - (NSInteger) contentCount;
 

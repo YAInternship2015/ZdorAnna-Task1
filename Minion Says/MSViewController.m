@@ -13,6 +13,7 @@
 
 @interface MSViewController () <UITableViewDataSource>
 
+#warning @property (nonatomic, strong) MSContentManager *allContent;
 @property (nonatomic, strong) MSContentManager* allContent;
 
 @end
@@ -24,6 +25,7 @@
     self.allContent = [MSContentManager managerWithSetOfContent];
 }
 
+#warning в этом методе Вы ничего не кастомизируете, потому его можно удалить
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -36,6 +38,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+#warning символ "*" прижимайте к имени переменной
     MSContentCell * cell = [tableView dequeueReusableCellWithIdentifier:MSContentCellIdentifier forIndexPath:indexPath];
     
     [cell setContent:[self.allContent contentAtIndex:indexPath.row]];
