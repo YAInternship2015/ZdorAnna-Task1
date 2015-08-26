@@ -11,8 +11,8 @@
 
 @interface MSContentManager : NSObject
 
-+ (MSContentManager *) managerWithSetOfContent;
-- (MSContent *) contentAtIndex: (NSInteger) index;
-- (NSInteger) contentCount;
++ (MSContentManager *)managerWithSetOfContent;
+- (MSContent *)contentAtIndex:(NSInteger)index;
+- (NSInteger)contentCount;
 
 @end

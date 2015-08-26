@@ -13,6 +13,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="MSContentCellIdentifier" selectionStyle="default" indentationWidth="10" reuseIdentifier="MSContentCellIdentifier" rowHeight="80" id="HIh-Dm-eTD" customClass="MSContentCell">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -20,7 +22,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKz-hy-2dy">
-                                            <rect key="frame" x="94" y="5" width="221" height="63"/>
+                                            <rect key="frame" x="98" y="1" width="221" height="71"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="221" id="J5c-Tn-zOd"/>
                                             </constraints>
@@ -29,7 +31,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="adj-OX-O6g">
-                                            <rect key="frame" x="5" y="5" width="69" height="69"/>
+                                            <rect key="frame" x="1" y="1" width="77" height="77"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="adj-OX-O6g" secondAttribute="height" multiplier="1:1" id="Yrk-cZ-SLe"/>
                                             </constraints>
@@ -37,11 +39,11 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="centerY" secondItem="adj-OX-O6g" secondAttribute="centerY" id="VfN-7m-1ho"/>
-                                        <constraint firstItem="adj-OX-O6g" firstAttribute="top" secondItem="ehq-7C-3N5" secondAttribute="top" constant="5" id="Yb6-Xe-a9e"/>
-                                        <constraint firstAttribute="bottom" secondItem="adj-OX-O6g" secondAttribute="bottom" constant="5" id="gNn-a0-nhz"/>
+                                        <constraint firstItem="adj-OX-O6g" firstAttribute="top" secondItem="ehq-7C-3N5" secondAttribute="top" constant="1" id="ZTF-PR-cPN"/>
                                         <constraint firstItem="lKz-hy-2dy" firstAttribute="centerY" secondItem="adj-OX-O6g" secondAttribute="centerY" constant="-3" id="hSa-nK-11X"/>
-                                        <constraint firstItem="adj-OX-O6g" firstAttribute="leading" secondItem="ehq-7C-3N5" secondAttribute="leading" constant="5" id="heh-y9-ZZi"/>
+                                        <constraint firstAttribute="bottom" secondItem="adj-OX-O6g" secondAttribute="bottom" constant="1" id="iE7-WF-y0J"/>
                                         <constraint firstItem="lKz-hy-2dy" firstAttribute="top" secondItem="adj-OX-O6g" secondAttribute="top" id="jTr-vt-NUM"/>
+                                        <constraint firstItem="adj-OX-O6g" firstAttribute="leading" secondItem="ehq-7C-3N5" secondAttribute="leading" constant="1" id="oDe-Fq-m79"/>
                                         <constraint firstItem="lKz-hy-2dy" firstAttribute="leading" secondItem="adj-OX-O6g" secondAttribute="trailing" constant="20" id="tr3-G6-o6S"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -56,10 +58,7 @@
                             <outlet property="delegate" destination="MLy-BI-l6K" id="gfA-9S-HaO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Minion Says" id="mUy-Bb-aaB">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="NuC-rT-bhg"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="S7B-B1-rJd"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Minion Says" id="mUy-Bb-aaB"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbS-W7-EDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

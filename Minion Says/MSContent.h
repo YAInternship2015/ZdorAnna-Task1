@@ -10,10 +10,9 @@
 
 @interface MSContent : NSObject
 
-@property (nonatomic, strong, readonly) UIImage * image;
-@property (nonatomic, strong, readonly) NSString * text;
+@property (nonatomic, strong, readonly) UIImage *image;
+@property (nonatomic, strong, readonly) NSString *text;
 
-- (id) initWithImage: (UIImage *)image
-             andText: (NSString *)text;
+- (id) initWithImage:(UIImage *)image text:(NSString *)text;
 
 @end

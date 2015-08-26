@@ -13,16 +13,16 @@ NSString* const MSContentCellIdentifier = @"MSContentCellIdentifier";
 
 @interface MSContentCell()
 
-@property (nonatomic, weak) IBOutlet UIImageView * contentImage;
-@property (nonatomic, weak) IBOutlet UILabel * contentText;
+@property (nonatomic, weak) IBOutlet UIImageView *contentImage;
+@property (nonatomic, weak) IBOutlet UILabel *contentText;
 
 @end
 
 @implementation MSContentCell
 
 - (void)setContent:(MSContent *)content {
-        self.contentText.text = content.text;
-        self.contentImage.image = content.image;
+    self.contentText.text = content.text;
+    self.contentImage.image = content.image;
 }
 
 @end

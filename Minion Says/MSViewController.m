@@ -13,7 +13,7 @@
 
 @interface MSViewController () <UITableViewDataSource>
 
-@property (nonatomic, strong) MSContentManager* allContent;
+@property (nonatomic, strong) MSContentManager *allContent;
 
 @end
 
@@ -24,19 +24,14 @@
     self.allContent = [MSContentManager managerWithSetOfContent];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 #pragma mark - UITableViewDataSource
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
    return [self.allContent contentCount];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MSContentCell * cell = [tableView dequeueReusableCellWithIdentifier:MSContentCellIdentifier forIndexPath:indexPath];
+    MSContentCell *cell = [tableView dequeueReusableCellWithIdentifier:MSContentCellIdentifier forIndexPath:indexPath];
     
     [cell setContent:[self.allContent contentAtIndex:indexPath.row]];
     

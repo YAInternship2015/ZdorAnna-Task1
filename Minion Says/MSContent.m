@@ -10,11 +10,9 @@
 
 @implementation MSContent
 
-- (id) initWithImage:(UIImage *)image
-             andText:(NSString *)text{
+- (id) initWithImage:(UIImage *)image text:(NSString *)text{
     self = [super init];
-    if (self)
-    {
+    if (self){
         _image = image;
         _text = text;
     }
