@@ -6,18 +6,18 @@
 //  Copyright (c) 2015 anna. All rights reserved.
 //
 
-#import "MSViewController.h"
+#import "MSTableViewController.h"
 #import "MSContent.h"
 #import "MSContentCell.h"
 #import "MSContentManager.h"
 
-@interface MSViewController () <UITableViewDataSource>
+@interface MSTableViewController () <UITableViewDataSource>
 
 @property (nonatomic, strong) MSContentManager *allContent;
 
 @end
 
-@implementation MSViewController
+@implementation MSTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,7 +37,5 @@
     
     return cell;
 }
-
-
 
 @end

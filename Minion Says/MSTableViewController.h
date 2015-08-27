@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MSContentCell.h"
 
-@interface MSViewController : UITableViewController <UITableViewDataSource>
+@interface MSTableViewController : UITableViewController <UITableViewDataSource>
 
 @end
 
