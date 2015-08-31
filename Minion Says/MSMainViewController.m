@@ -27,8 +27,10 @@ static NSString *const MSEmbedContainer = @"MSEmbedContainer";
 
 #pragma mark - Actions
 
-- (IBAction)actionChangeView:(id)sender {
+- (IBAction)actionChangeView:(UIBarButtonItem *)sender {
+    sender.enabled = NO;
     [self.containerViewController changeController];
+    sender.enabled = YES;
 }
 
 @end

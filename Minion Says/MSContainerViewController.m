@@ -47,8 +47,8 @@
     
     [self transitionFromViewController:fromViewController
                       toViewController:toViewController
-                              duration:0.3
-                               options:UIViewAnimationOptionAllowAnimatedContent
+                              duration:0.6
+                               options:UIViewAnimationOptionLayoutSubviews
                             animations:nil
                             completion:^(BOOL finished) {
                                 [fromViewController removeFromParentViewController];
@@ -65,8 +65,5 @@
         self.isTableVC = YES;
     }
 }
-
-
-
 
 @end
