@@ -9,13 +9,12 @@
 #import "MSContainerViewController.h"
 #import "MSCollectionViewController.h"
 #import "MSTableViewController.h"
-#import "MSMainViewController.h"
 
 @interface MSContainerViewController ()
 
 @property (nonatomic, strong) MSCollectionViewController *collectionViewController;
 @property (nonatomic, strong) MSTableViewController *tableViewController;
-@property (nonatomic, assign) BOOL isCollectionView;
+@property (nonatomic, assign) BOOL isTableVC;
 
 @end
 
@@ -24,47 +23,46 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.isCollectionView = NO;
-    self.tableViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"TableControllerID"];
-    self.collectionViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CollectionControllerID"];
+    self.isTableVC = YES;
     
+    self.collectionViewController = [self.storyboard instantiateViewControllerWithIdentifier:
+                                     MSCollectionViewControllerIdentifier];
+    
+    self.tableViewController = [self.storyboard instantiateViewControllerWithIdentifier:MSTableViewControllerIdentifier];
     [self displayViewController:self.tableViewController];
+    
+}
+
+- (void) displayViewController: (UIViewController *)viewController{
+    [self addChildViewController:viewController];
+    [self.view addSubview:viewController.view];
+    [viewController didMoveToParentViewController:self];
 }
 
 #pragma mark - Methods
 
--(void)displayViewController:(UIViewController* )newViewController{
-    [self addChildViewController:newViewController];
-    [self.view addSubview:newViewController.view];
-    [newViewController didMoveToParentViewController:self];
-}
-
-
-- (void)swapFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController {
-    toViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    
+- (void)changeFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController{
     [fromViewController willMoveToParentViewController:nil];
-    
     [self addChildViewController:toViewController];
     
     [self transitionFromViewController:fromViewController
                       toViewController:toViewController
-                              duration:0.25
-                               options:UIViewAnimationOptionTransitionCrossDissolve
+                              duration:0.6
+                               options:UIViewAnimationOptionLayoutSubviews
                             animations:nil
                             completion:^(BOOL finished) {
-        [fromViewController removeFromParentViewController];
-        [toViewController didMoveToParentViewController:self];
-    }];
+                                [fromViewController removeFromParentViewController];
+                                [toViewController didMoveToParentViewController:self];
+                            }];
 }
 
-- (void)changeViewController{
-    if (!self.isCollectionView) {
-        [self swapFromViewController:self.tableViewController toViewController:self.collectionViewController];
-        self.isCollectionView = YES;
+- (void) changeController {
+    if (self.isTableVC) {
+        [self changeFromViewController:self.tableViewController toViewController:self.collectionViewController];
+        self.isTableVC = NO;
     } else {
-        [self swapFromViewController:self.collectionViewController toViewController:self.tableViewController];
-        self.isCollectionView = NO;
+        [self changeFromViewController:self.collectionViewController toViewController:self.tableViewController];
+        self.isTableVC = YES;
     }
 }
 

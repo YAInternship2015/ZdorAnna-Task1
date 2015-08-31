@@ -10,7 +10,7 @@
 
 @implementation MSContentFactory
 
-+ (MSContent *)contentWithImage:(NSString *)imageName text:(NSString *)text{
++ (MSContent *)contentWithImageName:(NSString *)imageName text:(NSString *)text{
     MSContent *newContent = [[MSContent alloc] initWithImage:[UIImage imageNamed:imageName] text:text];
     return newContent;
 }

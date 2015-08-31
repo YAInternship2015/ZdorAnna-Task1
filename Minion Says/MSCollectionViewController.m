@@ -11,6 +11,8 @@
 #import "MSCollectionViewCell.h"
 #import "MSContentManager.h"
 
+NSString *const MSCollectionViewControllerIdentifier = @"MSCollectionViewControllerIdentifier";
+
 @interface MSCollectionViewController () <UICollectionViewDataSource>
 
 @property (nonatomic, strong) MSContentManager *allContent;

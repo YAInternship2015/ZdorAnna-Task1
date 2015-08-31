@@ -10,6 +10,6 @@
 
 @interface MSContainerViewController : UIViewController
 
-- (void)changeViewController;
+- (void) changeController;
 
 @end

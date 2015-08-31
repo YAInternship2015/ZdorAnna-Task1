@@ -10,6 +10,6 @@
 
 @interface MSContentValidator : NSObject
 
-- (BOOL) isValidContentText:(NSString *)text error:(NSError **)error;
+- (BOOL)isValidContentText:(NSString *)text error:(NSError **)error;
 
 @end

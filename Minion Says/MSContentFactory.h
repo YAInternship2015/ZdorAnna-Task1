@@ -11,6 +11,6 @@
 
 @interface MSContentFactory : NSObject
 
-+ (MSContent *)contentWithImage:(NSString *)imageName text:(NSString *)text;
++ (MSContent *)contentWithImageName:(NSString *)imageName text:(NSString *)text;
 
 @end

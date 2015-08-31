@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "MSContentCell.h"
 
+extern NSString *const MSTableViewControllerIdentifier;
+
+
 @interface MSTableViewController : UITableViewController <UITableViewDataSource>
 
 @end

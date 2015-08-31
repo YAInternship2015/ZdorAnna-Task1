@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString *const MSCollectionViewControllerIdentifier;
+
 @interface MSCollectionViewController : UICollectionViewController
 
 @end

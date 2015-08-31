@@ -11,6 +11,8 @@
 #import "MSContentCell.h"
 #import "MSContentManager.h"
 
+NSString *const MSTableViewControllerIdentifier = @"MSTableViewControllerIdentifier";
+
 @interface MSTableViewController () <UITableViewDataSource>
 
 @property (nonatomic, strong) MSContentManager *allContent;

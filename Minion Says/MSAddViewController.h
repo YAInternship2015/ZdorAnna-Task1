@@ -1,5 +1,5 @@
 //
-//  MSMainViewController.h
+//  MSAddViewController.h
 //  Minion Says
 //
 //  Created by anna on 8/31/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MSMainViewController : UIViewController
+@interface MSAddViewController : UIViewController
 
 @end
