@@ -5,10 +5,10 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Minion Says-->
+        <!--Table View Controller-->
         <scene sceneID="Tuk-8n-4yL">
             <objects>
-                <tableViewController id="MLy-BI-l6K" customClass="MSTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TableControllerID" title="Table View Controller" id="MLy-BI-l6K" customClass="MSTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="MHa-jG-iuS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,38 +62,38 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbS-W7-EDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-70" y="1036"/>
+            <point key="canvasLocation" x="208" y="-2320"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="cNH-HP-p8s">
             <objects>
-                <collectionViewController id="PNQ-sD-oTX" customClass="MSCollectionViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="CollectionControllerID" id="PNQ-sD-oTX" customClass="MSCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="tZc-nD-kGz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="byB-mT-Oy6">
-                            <size key="itemSize" width="50" height="50"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="byB-mT-Oy6">
+                            <size key="itemSize" width="90" height="90"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="5" minY="5" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="e25-4p-td5" customClass="MSCollectionViewCell">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MSCollectionCellIdentifier" id="e25-4p-td5" customClass="MSCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GKg-Ps-tUP">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kmg-UD-hlY">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <size key="customSize" width="80" height="80"/>
+                                <size key="customSize" width="90" height="90"/>
                                 <connections>
-                                    <outlet property="contentImage" destination="GKg-Ps-tUP" id="YVo-pQ-SPe"/>
+                                    <outlet property="contentImage" destination="Kmg-UD-hlY" id="aje-l3-ESz"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -105,7 +105,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCo-EC-gwU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="478" y="1036"/>
+            <point key="canvasLocation" x="208" y="-1448"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nqt-If-m2N">
@@ -121,12 +121,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AG4-s4-7q2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-69.333333333333329" y="317.13333333333327"/>
+            <point key="canvasLocation" x="-1052" y="-1903"/>
         </scene>
-        <!--Container View Controller-->
+        <!--Minion Says-->
         <scene sceneID="TWk-3X-l5A">
             <objects>
-                <viewController id="P2Q-SD-Bn6" customClass="MSContainerViewController" sceneMemberID="viewController">
+                <viewController title="Minion Says" id="P2Q-SD-Bn6" customClass="MSMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rG3-5p-kPF"/>
                         <viewControllerLayoutGuide type="bottom" id="iPK-LT-XCf"/>
@@ -134,13 +134,95 @@
                     <view key="view" contentMode="scaleToFill" id="rRA-OI-3aR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7b5-6y-Eza">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <connections>
+                                    <segue destination="AK1-kh-d2y" kind="embed" identifier="embedContainer" id="pl1-Tv-uWj"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="G7h-xd-9sS"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="G7h-xd-9sS">
+                        <barButtonItem key="leftBarButtonItem" title="nnn" id="2SQ-0M-d1h">
+                            <connections>
+                                <action selector="actionViewChanged:" destination="P2Q-SD-Bn6" id="71w-Cy-cRF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OgD-GA-hqc">
+                            <connections>
+                                <segue destination="eUl-qI-Zfo" kind="push" id="OAO-da-nCM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VJW-ba-61o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="478" y="317"/>
+            <point key="canvasLocation" x="-640" y="-1903"/>
+        </scene>
+        <!--Add Content View Controller-->
+        <scene sceneID="nt2-j1-Y0a">
+            <objects>
+                <viewController id="eUl-qI-Zfo" customClass="MSAddContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pCK-cn-kpR"/>
+                        <viewControllerLayoutGuide type="bottom" id="uCW-o8-CjT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="urK-Az-39g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OGb-C4-r4z">
+                                <rect key="frame" x="112" y="185" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eUl-qI-Zfo" id="XN3-TQ-0mh"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VjW-xY-259">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="4hP-28-uzy">
+                            <connections>
+                                <action selector="actionSaveText:" destination="eUl-qI-Zfo" id="uaJ-HN-odI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addTextField" destination="OGb-C4-r4z" id="SiB-mz-CuF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CBk-LY-YIF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-640" y="-1155"/>
+        </scene>
+        <!--Container View Controller-->
+        <scene sceneID="9I7-4N-fp4">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="AK1-kh-d2y" customClass="MSContainerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1a6-jc-5Pf"/>
+                        <viewControllerLayoutGuide type="bottom" id="XgC-az-5zn"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6TE-a0-HGn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <segue destination="PNQ-sD-oTX" kind="custom" identifier="embedCollectionView" customClass="MSSegue" id="Nor-CP-7V2"/>
+                        <segue destination="MLy-BI-l6K" kind="custom" identifier="embedTableView" customClass="MSSegue" id="9AH-Pv-a2j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9mH-AE-Nth" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-229" y="-1903"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

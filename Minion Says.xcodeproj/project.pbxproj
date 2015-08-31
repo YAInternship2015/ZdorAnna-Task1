@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		95241BFC1B8E4E55007246A3 /* MSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95241BFB1B8E4E55007246A3 /* MSCollectionViewController.m */; };
 		95241C021B8E501D007246A3 /* MSContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95241C011B8E501D007246A3 /* MSContainerViewController.m */; };
-		95942FE41B8EFC6F000DE0C6 /* MSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95942FE31B8EFC6F000DE0C6 /* MSCollectionViewCell.m */; };
+		953F0E7C1B945E6600527EBA /* MSContentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 953F0E7B1B945E6600527EBA /* MSContentFactory.m */; };
+		953F0E7F1B9469FE00527EBA /* MSContentValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 953F0E7E1B9469FE00527EBA /* MSContentValidator.m */; };
+		953F0E821B9473B100527EBA /* MSAddContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953F0E811B9473B100527EBA /* MSAddContentViewController.m */; };
+		95942FE81B8F0BA1000DE0C6 /* MSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95942FE71B8F0BA1000DE0C6 /* MSCollectionViewCell.m */; };
+		95942FEB1B8F1B96000DE0C6 /* MSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95942FEA1B8F1B96000DE0C6 /* MSMainViewController.m */; };
 		95CB898A1B7CA74500ADEBA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CB89891B7CA74500ADEBA5 /* main.m */; };
 		95CB898D1B7CA74500ADEBA5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CB898C1B7CA74500ADEBA5 /* AppDelegate.m */; };
 		95CB89901B7CA74500ADEBA5 /* MSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CB898F1B7CA74500ADEBA5 /* MSTableViewController.m */; };
@@ -46,8 +50,16 @@
 		95241BFB1B8E4E55007246A3 /* MSCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCollectionViewController.m; sourceTree = "<group>"; };
 		95241C001B8E501D007246A3 /* MSContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSContainerViewController.h; sourceTree = "<group>"; };
 		95241C011B8E501D007246A3 /* MSContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSContainerViewController.m; sourceTree = "<group>"; };
+		953F0E7A1B945E6600527EBA /* MSContentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSContentFactory.h; sourceTree = "<group>"; };
+		953F0E7B1B945E6600527EBA /* MSContentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSContentFactory.m; sourceTree = "<group>"; };
+		953F0E7D1B9469FE00527EBA /* MSContentValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSContentValidator.h; sourceTree = "<group>"; };
+		953F0E7E1B9469FE00527EBA /* MSContentValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSContentValidator.m; sourceTree = "<group>"; };
+		953F0E801B9473B100527EBA /* MSAddContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAddContentViewController.h; sourceTree = "<group>"; };
+		953F0E811B9473B100527EBA /* MSAddContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSAddContentViewController.m; sourceTree = "<group>"; };
 		95942FE21B8EFC6F000DE0C6 /* MSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCollectionViewCell.h; sourceTree = "<group>"; };
-		95942FE31B8EFC6F000DE0C6 /* MSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCollectionViewCell.m; sourceTree = "<group>"; };
+		95942FE71B8F0BA1000DE0C6 /* MSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCollectionViewCell.m; sourceTree = "<group>"; };
+		95942FE91B8F1B96000DE0C6 /* MSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMainViewController.h; sourceTree = "<group>"; };
+		95942FEA1B8F1B96000DE0C6 /* MSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMainViewController.m; sourceTree = "<group>"; };
 		95CB89841B7CA74500ADEBA5 /* Minion Says.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Minion Says.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CB89881B7CA74500ADEBA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95CB89891B7CA74500ADEBA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,6 +133,8 @@
 				95CB89C91B7CBDE800ADEBA5 /* View */,
 				95CB89CA1B7CBDFD00ADEBA5 /* Controller */,
 				95CB89CB1B7CBE3400ADEBA5 /* Data Source */,
+				953F0E7D1B9469FE00527EBA /* MSContentValidator.h */,
+				953F0E7E1B9469FE00527EBA /* MSContentValidator.m */,
 				95CB898B1B7CA74500ADEBA5 /* AppDelegate.h */,
 				95CB898C1B7CA74500ADEBA5 /* AppDelegate.m */,
 				95CB89911B7CA74500ADEBA5 /* Main.storyboard */,
@@ -179,6 +193,8 @@
 			children = (
 				95CB89B01B7CA9BA00ADEBA5 /* MSContent.h */,
 				95CB89B11B7CA9BA00ADEBA5 /* MSContent.m */,
+				953F0E7A1B945E6600527EBA /* MSContentFactory.h */,
+				953F0E7B1B945E6600527EBA /* MSContentFactory.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -189,7 +205,7 @@
 				95CB89AD1B7CA92900ADEBA5 /* MSContentCell.h */,
 				95CB89AE1B7CA92900ADEBA5 /* MSContentCell.m */,
 				95942FE21B8EFC6F000DE0C6 /* MSCollectionViewCell.h */,
-				95942FE31B8EFC6F000DE0C6 /* MSCollectionViewCell.m */,
+				95942FE71B8F0BA1000DE0C6 /* MSCollectionViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -197,12 +213,16 @@
 		95CB89CA1B7CBDFD00ADEBA5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				95942FE91B8F1B96000DE0C6 /* MSMainViewController.h */,
+				95942FEA1B8F1B96000DE0C6 /* MSMainViewController.m */,
 				95241C001B8E501D007246A3 /* MSContainerViewController.h */,
 				95241C011B8E501D007246A3 /* MSContainerViewController.m */,
 				95CB898E1B7CA74500ADEBA5 /* MSTableViewController.h */,
 				95CB898F1B7CA74500ADEBA5 /* MSTableViewController.m */,
 				95241BFA1B8E4E55007246A3 /* MSCollectionViewController.h */,
 				95241BFB1B8E4E55007246A3 /* MSCollectionViewController.m */,
+				953F0E801B9473B100527EBA /* MSAddContentViewController.h */,
+				953F0E811B9473B100527EBA /* MSAddContentViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -327,10 +347,14 @@
 			files = (
 				95241C021B8E501D007246A3 /* MSContainerViewController.m in Sources */,
 				95CB89AF1B7CA92900ADEBA5 /* MSContentCell.m in Sources */,
+				953F0E7C1B945E6600527EBA /* MSContentFactory.m in Sources */,
 				95CB89CE1B7CBEE000ADEBA5 /* MSContentManager.m in Sources */,
+				953F0E7F1B9469FE00527EBA /* MSContentValidator.m in Sources */,
 				95CB89901B7CA74500ADEBA5 /* MSTableViewController.m in Sources */,
 				95241BFC1B8E4E55007246A3 /* MSCollectionViewController.m in Sources */,
-				95942FE41B8EFC6F000DE0C6 /* MSCollectionViewCell.m in Sources */,
+				95942FEB1B8F1B96000DE0C6 /* MSMainViewController.m in Sources */,
+				953F0E821B9473B100527EBA /* MSAddContentViewController.m in Sources */,
+				95942FE81B8F0BA1000DE0C6 /* MSCollectionViewCell.m in Sources */,
 				95CB89B21B7CA9BA00ADEBA5 /* MSContent.m in Sources */,
 				95CB898D1B7CA74500ADEBA5 /* AppDelegate.m in Sources */,
 				95CB898A1B7CA74500ADEBA5 /* main.m in Sources */,

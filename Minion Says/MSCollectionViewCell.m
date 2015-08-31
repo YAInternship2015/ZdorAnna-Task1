@@ -9,7 +9,7 @@
 #import "MSCollectionViewCell.h"
 #import "MSContent.h"
 
-NSString* const MSCollectionViewCellIdentifier = @"MSCollectionViewCellIdentifier";
+NSString* const MSCollectionCellIdentifier = @"MSCollectionCellIdentifier";
 
 @interface MSCollectionViewCell()
 
@@ -20,7 +20,7 @@ NSString* const MSCollectionViewCellIdentifier = @"MSCollectionViewCellIdentifie
 @implementation MSCollectionViewCell
 
 - (void)setContent:(MSContent *)content {
-   self.contentImage.image = content.image;
+    self.contentImage.image = content.image;
 }
 
 @end

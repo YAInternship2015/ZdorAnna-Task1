@@ -30,9 +30,8 @@
     return [self.allContent contentCount];
 }
 
-
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    MSCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MSCollectionViewCellIdentifier
+    MSCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MSCollectionCellIdentifier
                                                                            forIndexPath:indexPath];
     
     [cell setContent:[self.allContent contentAtIndex:indexPath.row]];

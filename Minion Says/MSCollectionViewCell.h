@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-extern NSString *const MSCollectionViewCellIdentifier;
+extern NSString *const MSCollectionCellIdentifier;
 @class MSContent;
 
 @interface MSCollectionViewCell : UICollectionViewCell
