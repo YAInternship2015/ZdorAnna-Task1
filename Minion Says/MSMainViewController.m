@@ -28,6 +28,7 @@ static NSString *const MSEmbedContainer = @"MSEmbedContainer";
 #pragma mark - Actions
 
 - (IBAction)actionChangeView:(id)sender {
+    [self.containerViewController changeController];
 }
 
 @end
