@@ -12,11 +12,22 @@
 
 @interface MSContainerViewController ()
 
-@property (nonatomic, strong) MSCollectionViewController *collectionVC;
-@property (nonatomic, strong) MSTableViewController *tableVC;
+@property (nonatomic, strong) MSCollectionViewController *collectionViewController;
+@property (nonatomic, strong) MSTableViewController *tableViewController;
+@property (nonatomic, assign) BOOL isTableVC;
 
 @end
 
 @implementation MSContainerViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.collectionViewController = [self.storyboard instantiateViewControllerWithIdentifier:
+                                     MSCollectionViewControllerIdentifier];
+    
+    self.tableViewController = [self.storyboard instantiateViewControllerWithIdentifier:MSTableViewControllerIdentifier];
+    
+}
 
 @end

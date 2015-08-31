@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-extern NSString *const MSContentCellIdentifier;;
+extern NSString *const MSContentCellIdentifier;
 
 @class MSContent;
 
