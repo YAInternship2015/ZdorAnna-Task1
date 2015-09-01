@@ -14,6 +14,7 @@ static NSString *const MSEmbedContainer = @"MSEmbedContainer";
 @interface MSMainViewController ()
 
 @property (nonatomic, strong) MSContainerViewController *containerViewController;
+@property (nonatomic, strong) UINavigationBar *nb;
 
 @end
 
@@ -28,9 +29,7 @@ static NSString *const MSEmbedContainer = @"MSEmbedContainer";
 #pragma mark - Actions
 
 - (IBAction)actionChangeView:(UIBarButtonItem *)sender {
-    sender.enabled = NO;
     [self.containerViewController changeController];
-    sender.enabled = YES;
 }
 
 @end

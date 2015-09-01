@@ -7,13 +7,13 @@
 //
 
 #import "MSContainerViewController.h"
-#import "MSCollectionViewController.h"
-#import "MSTableViewController.h"
+//#import "MSCollectionViewController.h"
+//#import "MSTableViewController.h"
 
 @interface MSContainerViewController ()
 
-@property (nonatomic, strong) MSCollectionViewController *collectionViewController;
-@property (nonatomic, strong) MSTableViewController *tableViewController;
+@property (nonatomic, strong) UIViewController *collectionViewController;
+@property (nonatomic, strong) UIViewController *tableViewController;
 @property (nonatomic, assign) BOOL isTableVC;
 
 @end
@@ -25,13 +25,13 @@
     
     self.isTableVC = YES;
     
-    self.collectionViewController = [self.storyboard instantiateViewControllerWithIdentifier:
-                                     MSCollectionViewControllerIdentifier];
-    
-    self.tableViewController = [self.storyboard instantiateViewControllerWithIdentifier:MSTableViewControllerIdentifier];
+    self.tableViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MSTableViewControllerIdentifier"];
     [self displayViewController:self.tableViewController];
     
+    NSLog(@"viewDidLoad");
 }
+
+#pragma mark - Methods
 
 - (void) displayViewController: (UIViewController *)viewController{
     [self addChildViewController:viewController];
@@ -39,16 +39,17 @@
     [viewController didMoveToParentViewController:self];
 }
 
-#pragma mark - Methods
-
 - (void)changeFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController{
+    
+    toViewController.view.frame = [self frameForContentController];
+
     [fromViewController willMoveToParentViewController:nil];
     [self addChildViewController:toViewController];
     
     [self transitionFromViewController:fromViewController
                       toViewController:toViewController
-                              duration:0.6
-                               options:UIViewAnimationOptionLayoutSubviews
+                              duration:0.3
+                               options:UIViewAnimationOptionTransitionCrossDissolve
                             animations:nil
                             completion:^(BOOL finished) {
                                 [fromViewController removeFromParentViewController];
@@ -58,12 +59,20 @@
 
 - (void) changeController {
     if (self.isTableVC) {
+        self.collectionViewController = [self.storyboard instantiateViewControllerWithIdentifier:
+                                         @"MSCollectionViewControllerIdentifier"];
         [self changeFromViewController:self.tableViewController toViewController:self.collectionViewController];
         self.isTableVC = NO;
     } else {
+        self.tableViewController = [self.storyboard instantiateViewControllerWithIdentifier:
+                                    @"MSTableViewControllerIdentifier"];
         [self changeFromViewController:self.collectionViewController toViewController:self.tableViewController];
         self.isTableVC = YES;
     }
+}
+
+- (CGRect)frameForContentController {
+    return self.view.bounds;
 }
 
 @end
