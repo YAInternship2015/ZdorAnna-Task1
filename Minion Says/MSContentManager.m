@@ -10,15 +10,33 @@
 #import "MSContent.h"
 #import "NSFileManager+MSFilePath.h"
 
+NSString *const MSDataFileContentDidChangeNotification = @"MSDataFileContentDidChangeNotification";
+
+
 @interface MSContentManager ()
 
 @property (nonatomic, strong) NSMutableArray *contentArray;
-@property (nonatomic, strong) NSString *path1;
-
 
 @end
 
 @implementation MSContentManager
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(reloadSetOfContent:)
+                                                     name:MSDataFileContentDidChangeNotification
+                                                   object:nil];
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 #pragma mark - MSContentManager methods
 
@@ -54,9 +72,16 @@
     [modelsArray addObject:newModelDictionary];
     
     [modelsArray writeToFile:[self plistPath] atomically:YES];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:MSDataFileContentDidChangeNotification object:nil];
+
 }
 
 #pragma mapk - Methods
+
+- (void)reloadSetOfContent:(NSNotification *)notification{
+    [self managerWithSetOfContent];
+}
 
 - (NSString *)plistPath{
     NSString *plistPath = [NSFileManager filePath:@"Content" type:@"plist"];

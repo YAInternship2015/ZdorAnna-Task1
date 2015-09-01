@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 @class MSContent;
 
+extern NSString *const MSDataFileContentDidChangeNotification;
+
 @interface MSContentManager : NSObject
 
 - (MSContentManager *)managerWithSetOfContent;
