@@ -8,6 +8,8 @@
 
 #import "MSAddViewController.h"
 #import "MSContentValidator.h"
+#import "MSContentManager.h"
+#import "MSContentFactory.h"
 
 @interface MSAddViewController () <UITableViewDelegate>
 
@@ -38,12 +40,20 @@
                                                   cancelButtonTitle:NSLocalizedString(@"OK", @"")
                                                   otherButtonTitles:nil];
         [alertView show];
+    } else {
+        [self saveNewItem];
     }
 }
 
+- (void)saveNewItem{
+    MSContentManager *contentManager = [[MSContentManager alloc] init];
+    [contentManager saveModel:[MSContentFactory contentWithImageName:nil text:self.addTextField.text]];
+}
+
+
 #pragma mark - Actions
 
-- (IBAction)actionSaveItem:(id)sender {
+- (IBAction)actionSave:(id)sender {
     [self validateInputText];
 }
 

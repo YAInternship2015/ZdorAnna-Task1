@@ -14,6 +14,7 @@
 		953F0E8B1B94B53400527EBA /* MSAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953F0E8A1B94B53400527EBA /* MSAddViewController.m */; };
 		953F0E8E1B94B79000527EBA /* MSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953F0E8D1B94B79000527EBA /* MSMainViewController.m */; };
 		957319761B95A53F007AED5D /* Content.plist in Resources */ = {isa = PBXBuildFile; fileRef = 957319751B95A53F007AED5D /* Content.plist */; };
+		957319791B95F9BA007AED5D /* NSFileManager+MSFilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 957319781B95F9BA007AED5D /* NSFileManager+MSFilePath.m */; };
 		95942FE41B8EFC6F000DE0C6 /* MSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95942FE31B8EFC6F000DE0C6 /* MSCollectionViewCell.m */; };
 		95CB898A1B7CA74500ADEBA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CB89891B7CA74500ADEBA5 /* main.m */; };
 		95CB898D1B7CA74500ADEBA5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CB898C1B7CA74500ADEBA5 /* AppDelegate.m */; };
@@ -60,6 +61,8 @@
 		953F0E8C1B94B79000527EBA /* MSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMainViewController.h; sourceTree = "<group>"; };
 		953F0E8D1B94B79000527EBA /* MSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMainViewController.m; sourceTree = "<group>"; };
 		957319751B95A53F007AED5D /* Content.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Content.plist; sourceTree = "<group>"; };
+		957319771B95F9BA007AED5D /* NSFileManager+MSFilePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+MSFilePath.h"; sourceTree = "<group>"; };
+		957319781B95F9BA007AED5D /* NSFileManager+MSFilePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+MSFilePath.m"; sourceTree = "<group>"; };
 		95942FE21B8EFC6F000DE0C6 /* MSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCollectionViewCell.h; sourceTree = "<group>"; };
 		95942FE31B8EFC6F000DE0C6 /* MSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCollectionViewCell.m; sourceTree = "<group>"; };
 		95CB89841B7CA74500ADEBA5 /* Minion Says.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Minion Says.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9573197A1B96066B007AED5D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				957319771B95F9BA007AED5D /* NSFileManager+MSFilePath.h */,
+				957319781B95F9BA007AED5D /* NSFileManager+MSFilePath.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		95CB897B1B7CA74500ADEBA5 = {
 			isa = PBXGroup;
 			children = (
@@ -131,12 +143,13 @@
 		95CB89861B7CA74500ADEBA5 /* Minion Says */ = {
 			isa = PBXGroup;
 			children = (
-				953F0E861B94B2D700527EBA /* MSContentValidator.h */,
-				953F0E871B94B2D700527EBA /* MSContentValidator.m */,
+				9573197A1B96066B007AED5D /* Categories */,
 				95CB89C81B7CBDCA00ADEBA5 /* Model */,
 				95CB89C91B7CBDE800ADEBA5 /* View */,
 				95CB89CA1B7CBDFD00ADEBA5 /* Controller */,
 				95CB89CB1B7CBE3400ADEBA5 /* Data Source */,
+				953F0E861B94B2D700527EBA /* MSContentValidator.h */,
+				953F0E871B94B2D700527EBA /* MSContentValidator.m */,
 				95CB898B1B7CA74500ADEBA5 /* AppDelegate.h */,
 				95CB898C1B7CA74500ADEBA5 /* AppDelegate.m */,
 				95CB89911B7CA74500ADEBA5 /* Main.storyboard */,
@@ -354,6 +367,7 @@
 				95CB89AF1B7CA92900ADEBA5 /* MSContentCell.m in Sources */,
 				95CB89CE1B7CBEE000ADEBA5 /* MSContentManager.m in Sources */,
 				95CB89901B7CA74500ADEBA5 /* MSTableViewController.m in Sources */,
+				957319791B95F9BA007AED5D /* NSFileManager+MSFilePath.m in Sources */,
 				95241BFC1B8E4E55007246A3 /* MSCollectionViewController.m in Sources */,
 				95942FE41B8EFC6F000DE0C6 /* MSCollectionViewCell.m in Sources */,
 				953F0E8E1B94B79000527EBA /* MSMainViewController.m in Sources */,

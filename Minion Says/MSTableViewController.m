@@ -23,7 +23,8 @@ NSString *const MSTableViewControllerIdentifier = @"MSTableViewControllerIdentif
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.allContent = [MSContentManager managerWithSetOfContent];
+    MSContentManager *cm = [[MSContentManager alloc] init];
+    self.allContent = [cm managerWithSetOfContent];
 }
 
 #pragma mark - UITableViewDataSource

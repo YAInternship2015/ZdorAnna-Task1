@@ -88,7 +88,7 @@
                     <navigationItem key="navigationItem" id="De4-sd-YMf">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="qJ4-Fj-0eZ">
                             <connections>
-                                <action selector="actionSaveItem:" destination="xAT-kW-XBp" id="skj-7b-bqp"/>
+                                <action selector="actionSave:" destination="xAT-kW-XBp" id="Pwv-7d-fkU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

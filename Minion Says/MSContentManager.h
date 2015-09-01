@@ -11,8 +11,11 @@
 
 @interface MSContentManager : NSObject
 
-+ (MSContentManager *)managerWithSetOfContent;
+- (MSContentManager *)managerWithSetOfContent;
 - (MSContent *)contentAtIndex:(NSInteger)index;
 - (NSInteger)contentCount;
+- (void)saveModel:(MSContent *)newModel;
+
+
 
 @end

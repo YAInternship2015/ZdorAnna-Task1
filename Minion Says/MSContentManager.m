@@ -8,33 +8,28 @@
 
 #import "MSContentManager.h"
 #import "MSContent.h"
+#import "NSFileManager+MSFilePath.h"
 
 @interface MSContentManager ()
 
-@property (nonatomic, strong) NSMutableArray* contentArray;
+@property (nonatomic, strong) NSMutableArray *contentArray;
+@property (nonatomic, strong) NSString *path1;
+
 
 @end
 
 @implementation MSContentManager
 
-+ (MSContentManager *)managerWithSetOfContent{
-    
-  
-    NSArray *contentImages = [NSArray arrayWithObjects:@"1.jpg", @"2.jpg", @"3.jpg", @"4.jpg",
-                              @"5.jpg", @"6.jpg", @"7.jpg", @"8.jpg", @"9.jpg", @"10.jpg", nil];
-    
-    NSArray *contentText = [NSArray arrayWithObjects:@"Poopaya!", @"Gelato", @"Tulaliloo ti amo!", @"BEE DO BEE DO BEE DO!",
-                             @"Butt", @"Bello!", @"Bananonina!", @"Po ka", @"Tatata bala tu!", @"Me want banana!", nil];
-    
+#pragma mark - MSContentManager methods
+
+- (MSContentManager *)managerWithSetOfContent{
+    NSArray* contentArray = [[NSArray alloc] initWithContentsOfFile:[self plistPath]];
     NSMutableArray *tempArray = [NSMutableArray array];
-    
-    for (int i = 0; i < [contentImages count]; i++) {
-        
-        MSContent *newContent = [[MSContent alloc] initWithImage:[UIImage imageNamed:[contentImages objectAtIndex:i]]
-                                                            text:[contentText objectAtIndex:i]];
+    for (NSDictionary* modelDictionary in contentArray) {
+        MSContent *newContent = [[MSContent alloc] initWithImage:[UIImage imageNamed:[modelDictionary valueForKey:@"image"]]
+                                                            text:[modelDictionary valueForKey:@"text"]];
         [tempArray addObject:newContent];
     }
-    
     MSContentManager *allContent = [[MSContentManager alloc] init];
     allContent.contentArray = tempArray;
     
@@ -51,5 +46,22 @@
 - (NSInteger)contentCount{
     return [self.contentArray count];
 }
+
+- (void)saveModel:(MSContent *)newModel{
+    NSDictionary *newModelDictionary = [NSDictionary dictionaryWithObjectsAndKeys:newModel.text, @"text", nil];
+    NSMutableArray *modelsArray = [NSMutableArray arrayWithContentsOfFile:[self plistPath]];
+    
+    [modelsArray addObject:newModelDictionary];
+    
+    [modelsArray writeToFile:[self plistPath] atomically:YES];
+}
+
+#pragma mapk - Methods
+
+- (NSString *)plistPath{
+    NSString *plistPath = [NSFileManager filePath:@"Content" type:@"plist"];
+    return plistPath;
+}
+
 
 @end
