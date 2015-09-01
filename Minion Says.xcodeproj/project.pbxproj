@@ -13,6 +13,7 @@
 		953F0E881B94B2D700527EBA /* MSContentValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 953F0E871B94B2D700527EBA /* MSContentValidator.m */; };
 		953F0E8B1B94B53400527EBA /* MSAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953F0E8A1B94B53400527EBA /* MSAddViewController.m */; };
 		953F0E8E1B94B79000527EBA /* MSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953F0E8D1B94B79000527EBA /* MSMainViewController.m */; };
+		957319761B95A53F007AED5D /* Content.plist in Resources */ = {isa = PBXBuildFile; fileRef = 957319751B95A53F007AED5D /* Content.plist */; };
 		95942FE41B8EFC6F000DE0C6 /* MSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95942FE31B8EFC6F000DE0C6 /* MSCollectionViewCell.m */; };
 		95CB898A1B7CA74500ADEBA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CB89891B7CA74500ADEBA5 /* main.m */; };
 		95CB898D1B7CA74500ADEBA5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CB898C1B7CA74500ADEBA5 /* AppDelegate.m */; };
@@ -58,6 +59,7 @@
 		953F0E8A1B94B53400527EBA /* MSAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSAddViewController.m; sourceTree = "<group>"; };
 		953F0E8C1B94B79000527EBA /* MSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMainViewController.h; sourceTree = "<group>"; };
 		953F0E8D1B94B79000527EBA /* MSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMainViewController.m; sourceTree = "<group>"; };
+		957319751B95A53F007AED5D /* Content.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Content.plist; sourceTree = "<group>"; };
 		95942FE21B8EFC6F000DE0C6 /* MSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCollectionViewCell.h; sourceTree = "<group>"; };
 		95942FE31B8EFC6F000DE0C6 /* MSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCollectionViewCell.m; sourceTree = "<group>"; };
 		95CB89841B7CA74500ADEBA5 /* Minion Says.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Minion Says.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 			children = (
 				95CB89881B7CA74500ADEBA5 /* Info.plist */,
 				95CB89891B7CA74500ADEBA5 /* main.m */,
+				957319751B95A53F007AED5D /* Content.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				957319761B95A53F007AED5D /* Content.plist in Resources */,
 				95CB89C61B7CAC2700ADEBA5 /* 8.jpg in Resources */,
 				95CB89C41B7CAC2700ADEBA5 /* 6.jpg in Resources */,
 				95CB89BE1B7CAC2700ADEBA5 /* 1.jpg in Resources */,

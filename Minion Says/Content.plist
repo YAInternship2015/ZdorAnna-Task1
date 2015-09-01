@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>image</key>
+		<string>1.jpg</string>
+		<key>text</key>
+		<string>Tatata bala tu!</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>2.jpg</string>
+		<key>text</key>
+		<string>Me want banana!</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>3.jpg</string>
+		<key>text</key>
+		<string>Po ka</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>4.jpg</string>
+		<key>text</key>
+		<string>Bananonina!</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>5.jpg</string>
+		<key>text</key>
+		<string>Bello</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>6.jpg</string>
+		<key>text</key>
+		<string>Butt</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>7.jpg</string>
+		<key>text</key>
+		<string>Bee do bee do bee do!</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>8.jpg</string>
+		<key>text</key>
+		<string>Tulaliloo ti amo!</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>9.jpg</string>
+		<key>text</key>
+		<string>Gelato</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>10.jpg</string>
+		<key>text</key>
+		<string>Poopaya</string>
+	</dict>
+</array>
+</plist>
