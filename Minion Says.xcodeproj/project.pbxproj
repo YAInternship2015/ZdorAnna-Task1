@@ -15,11 +15,12 @@
 		953F0E8E1B94B79000527EBA /* MSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953F0E8D1B94B79000527EBA /* MSMainViewController.m */; };
 		957319761B95A53F007AED5D /* Content.plist in Resources */ = {isa = PBXBuildFile; fileRef = 957319751B95A53F007AED5D /* Content.plist */; };
 		957319791B95F9BA007AED5D /* NSFileManager+MSFilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 957319781B95F9BA007AED5D /* NSFileManager+MSFilePath.m */; };
+		9573197C1B9770D2007AED5D /* newItem.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9573197B1B9770D2007AED5D /* newItem.jpg */; };
+		9573197F1B977C66007AED5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9573197D1B977C66007AED5D /* Main.storyboard */; };
 		95942FE41B8EFC6F000DE0C6 /* MSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95942FE31B8EFC6F000DE0C6 /* MSCollectionViewCell.m */; };
 		95CB898A1B7CA74500ADEBA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CB89891B7CA74500ADEBA5 /* main.m */; };
 		95CB898D1B7CA74500ADEBA5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CB898C1B7CA74500ADEBA5 /* AppDelegate.m */; };
 		95CB89901B7CA74500ADEBA5 /* MSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CB898F1B7CA74500ADEBA5 /* MSTableViewController.m */; };
-		95CB89931B7CA74500ADEBA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95CB89911B7CA74500ADEBA5 /* Main.storyboard */; };
 		95CB89981B7CA74500ADEBA5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95CB89961B7CA74500ADEBA5 /* LaunchScreen.xib */; };
 		95CB89A41B7CA74500ADEBA5 /* Minion_SaysTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CB89A31B7CA74500ADEBA5 /* Minion_SaysTests.m */; };
 		95CB89AF1B7CA92900ADEBA5 /* MSContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CB89AE1B7CA92900ADEBA5 /* MSContentCell.m */; };
@@ -63,6 +64,8 @@
 		957319751B95A53F007AED5D /* Content.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Content.plist; sourceTree = "<group>"; };
 		957319771B95F9BA007AED5D /* NSFileManager+MSFilePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+MSFilePath.h"; sourceTree = "<group>"; };
 		957319781B95F9BA007AED5D /* NSFileManager+MSFilePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+MSFilePath.m"; sourceTree = "<group>"; };
+		9573197B1B9770D2007AED5D /* newItem.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newItem.jpg; sourceTree = "<group>"; };
+		9573197E1B977C66007AED5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95942FE21B8EFC6F000DE0C6 /* MSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCollectionViewCell.h; sourceTree = "<group>"; };
 		95942FE31B8EFC6F000DE0C6 /* MSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCollectionViewCell.m; sourceTree = "<group>"; };
 		95CB89841B7CA74500ADEBA5 /* Minion Says.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Minion Says.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,7 +75,6 @@
 		95CB898C1B7CA74500ADEBA5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		95CB898E1B7CA74500ADEBA5 /* MSTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSTableViewController.h; sourceTree = "<group>"; };
 		95CB898F1B7CA74500ADEBA5 /* MSTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSTableViewController.m; sourceTree = "<group>"; };
-		95CB89921B7CA74500ADEBA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95CB89971B7CA74500ADEBA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		95CB899D1B7CA74500ADEBA5 /* Minion SaysTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Minion SaysTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CB89A21B7CA74500ADEBA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -152,8 +154,8 @@
 				953F0E871B94B2D700527EBA /* MSContentValidator.m */,
 				95CB898B1B7CA74500ADEBA5 /* AppDelegate.h */,
 				95CB898C1B7CA74500ADEBA5 /* AppDelegate.m */,
-				95CB89911B7CA74500ADEBA5 /* Main.storyboard */,
 				95CB89961B7CA74500ADEBA5 /* LaunchScreen.xib */,
+				9573197D1B977C66007AED5D /* Main.storyboard */,
 				95CB89B31B7CAC2700ADEBA5 /* images */,
 				95CB89871B7CA74500ADEBA5 /* Supporting Files */,
 			);
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				95CB89B41B7CAC2700ADEBA5 /* 1.jpg */,
+				9573197B1B9770D2007AED5D /* newItem.jpg */,
 				95CB89B51B7CAC2700ADEBA5 /* 10.jpg */,
 				95CB89B61B7CAC2700ADEBA5 /* 2.jpg */,
 				95CB89B71B7CAC2700ADEBA5 /* 3.jpg */,
@@ -337,8 +340,9 @@
 				95CB89C41B7CAC2700ADEBA5 /* 6.jpg in Resources */,
 				95CB89BE1B7CAC2700ADEBA5 /* 1.jpg in Resources */,
 				95CB89C31B7CAC2700ADEBA5 /* 5.jpg in Resources */,
+				9573197C1B9770D2007AED5D /* newItem.jpg in Resources */,
 				95CB89C21B7CAC2700ADEBA5 /* 4.jpg in Resources */,
-				95CB89931B7CA74500ADEBA5 /* Main.storyboard in Resources */,
+				9573197F1B977C66007AED5D /* Main.storyboard in Resources */,
 				95CB89C01B7CAC2700ADEBA5 /* 2.jpg in Resources */,
 				95CB89C11B7CAC2700ADEBA5 /* 3.jpg in Resources */,
 				95CB89C51B7CAC2700ADEBA5 /* 7.jpg in Resources */,
@@ -398,10 +402,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		95CB89911B7CA74500ADEBA5 /* Main.storyboard */ = {
+		9573197D1B977C66007AED5D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				95CB89921B7CA74500ADEBA5 /* Base */,
+				9573197E1B977C66007AED5D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

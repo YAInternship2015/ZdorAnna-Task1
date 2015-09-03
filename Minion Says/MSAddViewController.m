@@ -40,14 +40,25 @@
                                                   cancelButtonTitle:NSLocalizedString(@"OK", @"")
                                                   otherButtonTitles:nil];
         [alertView show];
+
+        
     } else {
         [self saveNewItem];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
+                                                            message:[NSString stringWithFormat:@"Minion say: %@",
+                                                                     self.addTextField.text]
+                                                           delegate:nil
+                                                  cancelButtonTitle:NSLocalizedString(@"OK", @"")
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
 - (void)saveNewItem{
     MSContentManager *contentManager = [[MSContentManager alloc] init];
-    [contentManager saveModel:[MSContentFactory contentWithImageName:nil text:self.addTextField.text]];
+    [contentManager saveModel:[MSContentFactory contentWithImageName:@"newItem.jpg"
+                                                                text:self.addTextField.text]];
 }
 
 

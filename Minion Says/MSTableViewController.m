@@ -13,7 +13,7 @@
 
 NSString *const MSTableViewControllerIdentifier = @"MSTableViewControllerIdentifier";
 
-@interface MSTableViewController () <UITableViewDataSource>
+@interface MSTableViewController () <UITableViewDataSource, MSModelsDataSourceDelegate>
 
 @property (nonatomic, strong) MSContentManager *allContent;
 
@@ -23,8 +23,7 @@ NSString *const MSTableViewControllerIdentifier = @"MSTableViewControllerIdentif
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    MSContentManager *cm = [[MSContentManager alloc] init];
-    self.allContent = [cm managerWithSetOfContent];
+     self.allContent = [[MSContentManager alloc] initWithDelegate:self];
 }
 
 #pragma mark - UITableViewDataSource
@@ -40,5 +39,12 @@ NSString *const MSTableViewControllerIdentifier = @"MSTableViewControllerIdentif
     
     return cell;
 }
+
+#pragma mark - MSModelsDataSourceDelegate
+
+- (void)dataWasChanged:(MSContentManager *)data{
+    [self.tableView reloadData];
+}
+
 
 @end

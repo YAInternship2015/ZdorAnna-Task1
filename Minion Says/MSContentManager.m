@@ -12,47 +12,36 @@
 
 NSString *const MSDataFileContentDidChangeNotification = @"MSDataFileContentDidChangeNotification";
 
-
 @interface MSContentManager ()
 
-@property (nonatomic, strong) NSMutableArray *contentArray;
+@property (nonatomic, strong) NSArray *contentArray;
+@property (nonatomic, weak) id<MSModelsDataSourceDelegate> delegate;
 
 @end
 
 @implementation MSContentManager
 
-- (instancetype)init
-{
-    self = [super init];
+- (instancetype)initWithDelegate:(id<MSModelsDataSourceDelegate>)delegate {
+    self = [self init];
     if (self) {
+        
+        [self plistPath];
+        self.contentArray = [NSArray arrayWithArray:[self arrayWithSetOfContent]];
+        
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(reloadSetOfContent:)
                                                      name:MSDataFileContentDidChangeNotification
                                                    object:nil];
+        self.delegate = delegate;
     }
     return self;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - MSContentManager methods
-
-- (MSContentManager *)managerWithSetOfContent{
-    NSArray* contentArray = [[NSArray alloc] initWithContentsOfFile:[self plistPath]];
-    NSMutableArray *tempArray = [NSMutableArray array];
-    for (NSDictionary* modelDictionary in contentArray) {
-        MSContent *newContent = [[MSContent alloc] initWithImage:[UIImage imageNamed:[modelDictionary valueForKey:@"image"]]
-                                                            text:[modelDictionary valueForKey:@"text"]];
-        [tempArray addObject:newContent];
-    }
-    MSContentManager *allContent = [[MSContentManager alloc] init];
-    allContent.contentArray = tempArray;
-    
-    return allContent;
-}
 
 - (MSContent *)contentAtIndex:(NSInteger)index{
     if (index < 0 || index >= [self.contentArray count]) {
@@ -66,21 +55,26 @@ NSString *const MSDataFileContentDidChangeNotification = @"MSDataFileContentDidC
 }
 
 - (void)saveModel:(MSContent *)newModel{
-    NSDictionary *newModelDictionary = [NSDictionary dictionaryWithObjectsAndKeys:newModel.text, @"text", nil];
+    NSDictionary *newModelDictionary = [NSDictionary dictionaryWithObjectsAndKeys:newModel.text, @"text",
+                                                                                  @"newItem.jpg", @"image", nil];
     NSMutableArray *modelsArray = [NSMutableArray arrayWithContentsOfFile:[self plistPath]];
-    
     [modelsArray addObject:newModelDictionary];
-    
     [modelsArray writeToFile:[self plistPath] atomically:YES];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:MSDataFileContentDidChangeNotification object:nil];
-
+    [[NSNotificationCenter defaultCenter] postNotificationName:MSDataFileContentDidChangeNotification object:self];
 }
 
 #pragma mapk - Methods
 
-- (void)reloadSetOfContent:(NSNotification *)notification{
-    [self managerWithSetOfContent];
+- (NSArray *)arrayWithSetOfContent{
+    NSArray* contentArray = [[NSArray alloc] initWithContentsOfFile:[self plistPath]];
+    NSMutableArray *tempArray = [NSMutableArray array];
+    for (NSDictionary* modelDictionary in contentArray) {
+        MSContent *newContent = [[MSContent alloc] initWithImage:[UIImage imageNamed:[modelDictionary valueForKey:@"image"]]
+                                                            text:[modelDictionary valueForKey:@"text"]];
+        [tempArray addObject:newContent];
+    }
+    return tempArray;
 }
 
 - (NSString *)plistPath{
@@ -88,5 +82,11 @@ NSString *const MSDataFileContentDidChangeNotification = @"MSDataFileContentDidC
     return plistPath;
 }
 
+#pragma mark - Notification
+
+- (void)reloadSetOfContent:(NSNotification *)notification{
+    self.contentArray = [self arrayWithSetOfContent];
+    [self.delegate dataWasChanged:self];
+}
 
 @end

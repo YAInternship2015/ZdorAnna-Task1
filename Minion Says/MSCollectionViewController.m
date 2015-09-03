@@ -13,7 +13,7 @@
 
 NSString *const MSCollectionViewControllerIdentifier = @"MSCollectionViewControllerIdentifier";
 
-@interface MSCollectionViewController () <UICollectionViewDataSource>
+@interface MSCollectionViewController () <UICollectionViewDataSource, MSModelsDataSourceDelegate>
 
 @property (nonatomic, strong) MSContentManager *allContent;
 
@@ -23,8 +23,7 @@ NSString *const MSCollectionViewControllerIdentifier = @"MSCollectionViewControl
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    MSContentManager *cm = [[MSContentManager alloc] init];
-    self.allContent = [cm managerWithSetOfContent];
+    self.allContent = [[MSContentManager alloc] initWithDelegate:self];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -40,6 +39,12 @@ NSString *const MSCollectionViewControllerIdentifier = @"MSCollectionViewControl
     [cell setContent:[self.allContent contentAtIndex:indexPath.row]];
     
     return cell;
+}
+
+#pragma mark - MSModelsDataSourceDelegate
+
+- (void)dataWasChanged:(MSContentManager *)data{
+    [self.collectionView reloadData];
 }
 
 @end

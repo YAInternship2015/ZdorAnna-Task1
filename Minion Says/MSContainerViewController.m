@@ -27,8 +27,6 @@
     
     self.tableViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MSTableViewControllerIdentifier"];
     [self displayViewController:self.tableViewController];
-    
-    NSLog(@"viewDidLoad");
 }
 
 #pragma mark - Methods

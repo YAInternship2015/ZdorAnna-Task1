@@ -11,8 +11,7 @@
 
 extern NSString *const MSTableViewControllerIdentifier;
 
-
-@interface MSTableViewController : UITableViewController <UITableViewDataSource>
+@interface MSTableViewController : UITableViewController
 
 @end
 

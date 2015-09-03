@@ -7,17 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+
 @class MSContent;
+@protocol MSModelsDataSourceDelegate;
 
 extern NSString *const MSDataFileContentDidChangeNotification;
 
 @interface MSContentManager : NSObject
 
-- (MSContentManager *)managerWithSetOfContent;
+- (instancetype)initWithDelegate:(id<MSModelsDataSourceDelegate>)delegate;
 - (MSContent *)contentAtIndex:(NSInteger)index;
 - (NSInteger)contentCount;
 - (void)saveModel:(MSContent *)newModel;
 
+@end
 
+
+@protocol MSModelsDataSourceDelegate <NSObject>
+
+- (void)dataWasChanged:(MSContentManager *)data;
 
 @end
