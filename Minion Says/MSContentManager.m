@@ -67,7 +67,7 @@ NSString *const MSDataFileContentDidChangeNotification = @"MSDataFileContentDidC
 #pragma mapk - Methods
 
 - (NSArray *)arrayWithSetOfContent{
-    NSArray* contentArray = [[NSArray alloc] initWithContentsOfFile:[self plistPath]];
+    NSArray *contentArray = [[NSArray alloc] initWithContentsOfFile:[self plistPath]];
     NSMutableArray *tempArray = [NSMutableArray array];
     for (NSDictionary* modelDictionary in contentArray) {
         MSContent *newContent = [[MSContent alloc] initWithImage:[UIImage imageNamed:[modelDictionary valueForKey:@"image"]]

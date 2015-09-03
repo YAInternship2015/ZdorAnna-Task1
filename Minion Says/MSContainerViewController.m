@@ -7,8 +7,8 @@
 //
 
 #import "MSContainerViewController.h"
-//#import "MSCollectionViewController.h"
-//#import "MSTableViewController.h"
+#import "MSCollectionViewController.h"
+#import "MSTableViewController.h"
 
 @interface MSContainerViewController ()
 
@@ -25,7 +25,7 @@
     
     self.isTableVC = YES;
     
-    self.tableViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MSTableViewControllerIdentifier"];
+    self.tableViewController = [self.storyboard instantiateViewControllerWithIdentifier:MSTableViewControllerIdentifier];
     [self displayViewController:self.tableViewController];
 }
 
@@ -58,12 +58,12 @@
 - (void) changeController {
     if (self.isTableVC) {
         self.collectionViewController = [self.storyboard instantiateViewControllerWithIdentifier:
-                                         @"MSCollectionViewControllerIdentifier"];
+                                         MSCollectionViewControllerIdentifier];
         [self changeFromViewController:self.tableViewController toViewController:self.collectionViewController];
         self.isTableVC = NO;
     } else {
         self.tableViewController = [self.storyboard instantiateViewControllerWithIdentifier:
-                                    @"MSTableViewControllerIdentifier"];
+                                    MSTableViewControllerIdentifier];
         [self changeFromViewController:self.collectionViewController toViewController:self.tableViewController];
         self.isTableVC = YES;
     }

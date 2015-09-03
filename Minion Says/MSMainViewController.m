@@ -14,7 +14,6 @@ static NSString *const MSEmbedContainer = @"MSEmbedContainer";
 @interface MSMainViewController ()
 
 @property (nonatomic, strong) MSContainerViewController *containerViewController;
-@property (nonatomic, strong) UINavigationBar *nb;
 
 @end
 
