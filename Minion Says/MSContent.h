@@ -13,6 +13,7 @@
 @property (nonatomic, strong, readonly) UIImage *image;
 @property (nonatomic, strong, readonly) NSString *text;
 
+#warning после (id) не нужен пробел
 - (id) initWithImage:(UIImage *)image text:(NSString *)text;
 
 @end

@@ -24,7 +24,7 @@ NSString *const MSDataFileContentDidChangeNotification = @"MSDataFileContentDidC
 - (instancetype)initWithDelegate:(id<MSModelsDataSourceDelegate>)delegate {
     self = [self init];
     if (self) {
-        
+#warning не понял, зачем нужна следующая строка
         [self plistPath];
         self.contentArray = [NSArray arrayWithArray:[self arrayWithSetOfContent]];
         
@@ -55,6 +55,7 @@ NSString *const MSDataFileContentDidChangeNotification = @"MSDataFileContentDidC
 }
 
 - (void)saveModel:(MSContent *)newModel{
+#warning "разбор" модели в NSDictionary лучше реализоватьв категории к самой модели в методе -dictionaryRepresentation;
     NSDictionary *newModelDictionary = [NSDictionary dictionaryWithObjectsAndKeys:newModel.text, @"text",
                                                                                   @"newItem.jpg", @"image", nil];
     NSMutableArray *modelsArray = [NSMutableArray arrayWithContentsOfFile:[self plistPath]];

@@ -10,6 +10,7 @@
 
 @interface MSContainerViewController : UIViewController
 
+#warning после (void) не нужен пробел
 - (void) changeController;
 
 @end

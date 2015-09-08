@@ -11,6 +11,7 @@
 
 NSString* const MSContentCellIdentifier = @"MSContentCellIdentifier";
 
+#warning перед () нужен пробел
 @interface MSContentCell()
 
 @property (nonatomic, weak) IBOutlet UIImageView *contentImage;

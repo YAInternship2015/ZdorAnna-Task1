@@ -9,6 +9,7 @@
 #import "MSCollectionViewCell.h"
 #import "MSContent.h"
 
+#warning NSString *const
 NSString* const MSCollectionCellIdentifier = @"MSCollectionCellIdentifier";
 
 @interface MSCollectionViewCell()

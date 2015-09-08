@@ -13,7 +13,7 @@
 
 @interface MSAddViewController () <UITableViewDelegate>
 
-
+#warning (nonatomic, weak) - такой формати прописан в наших гайдлайнах
 @property (weak, nonatomic) IBOutlet UITextField *addTextField;
 @property (nonatomic, strong) MSContentValidator *validator;
 
@@ -44,6 +44,7 @@
         
     } else {
         [self saveNewItem];
+#warning @"Minion say: %@" следует вынести в Localizable.strings
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
                                                             message:[NSString stringWithFormat:@"Minion say: %@",
                                                                      self.addTextField.text]
@@ -57,6 +58,7 @@
 
 - (void)saveNewItem{
     MSContentManager *contentManager = [[MSContentManager alloc] init];
+#warning можно создать категорию к UIImage, где будет метод вроде +defaultContentImage. И тогда имя картинки будет инкапсулировано в категории, и в метод фабрики Вы будете передавать уже UIImage
     [contentManager saveModel:[MSContentFactory contentWithImageName:@"newItem.jpg"
                                                                 text:self.addTextField.text]];
 }

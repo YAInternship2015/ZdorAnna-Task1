@@ -10,6 +10,7 @@
 
 @implementation MSContentFactory
 
+#warning перед { нужен пробел
 + (MSContent *)contentWithImageName:(NSString *)imageName text:(NSString *)text{
     MSContent *newContent = [[MSContent alloc] initWithImage:[UIImage imageNamed:imageName] text:text];
     return newContent;
