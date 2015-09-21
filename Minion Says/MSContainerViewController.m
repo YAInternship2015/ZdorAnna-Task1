@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) UIViewController *collectionViewController;
 @property (nonatomic, strong) UIViewController *tableViewController;
-@property (nonatomic, assign) BOOL isTableVC;
+@property (nonatomic, assign) BOOL isTableViewControllerVisible;
 
 @end
 
@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.isTableVC = YES;
+    self.isTableViewControllerVisible = YES;
     
     self.tableViewController = [self.storyboard instantiateViewControllerWithIdentifier:MSTableViewControllerIdentifier];
     [self displayViewController:self.tableViewController];
@@ -31,7 +31,7 @@
 
 #pragma mark - Methods
 
-- (void) displayViewController: (UIViewController *)viewController{
+- (void) displayViewController:(UIViewController *)viewController {
     [self addChildViewController:viewController];
     [self.view addSubview:viewController.view];
     [viewController didMoveToParentViewController:self];
@@ -44,9 +44,11 @@
     [fromViewController willMoveToParentViewController:nil];
     [self addChildViewController:toViewController];
     
+    static const NSTimeInterval kControllersSwitchingAnimationDuration = 0.3;
+    
     [self transitionFromViewController:fromViewController
                       toViewController:toViewController
-                              duration:0.3
+                              duration:kControllersSwitchingAnimationDuration
                                options:UIViewAnimationOptionTransitionCrossDissolve
                             animations:nil
                             completion:^(BOOL finished) {
@@ -55,17 +57,17 @@
                             }];
 }
 
-- (void) changeController {
-    if (self.isTableVC) {
+- (void)changeController {
+    if (self.isTableViewControllerVisible) {
         self.collectionViewController = [self.storyboard instantiateViewControllerWithIdentifier:
                                          MSCollectionViewControllerIdentifier];
         [self changeFromViewController:self.tableViewController toViewController:self.collectionViewController];
-        self.isTableVC = NO;
+        self.isTableViewControllerVisible = NO;
     } else {
         self.tableViewController = [self.storyboard instantiateViewControllerWithIdentifier:
                                     MSTableViewControllerIdentifier];
         [self changeFromViewController:self.collectionViewController toViewController:self.tableViewController];
-        self.isTableVC = YES;
+        self.isTableViewControllerVisible = YES;
     }
 }
 

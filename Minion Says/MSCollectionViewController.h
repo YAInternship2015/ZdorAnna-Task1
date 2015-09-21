@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class MSDataSource;
 
 extern NSString *const MSCollectionViewControllerIdentifier;
 
 @interface MSCollectionViewController : UICollectionViewController
+
+@property (nonatomic, strong) MSDataSource *dataSource;
 
 @end

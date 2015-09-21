@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hPl-Ch-B4m">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hPl-Ch-B4m">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -60,7 +60,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yQA-Ym-SnN">
                             <color key="tintColor" red="0.396188447" green="0.396188447" blue="0.396188447" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="xAT-kW-XBp" kind="show" id="5fz-sp-1pw"/>
+                                <segue destination="xAT-kW-XBp" kind="show" identifier="" id="5fz-sp-1pw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -104,12 +104,17 @@
                                     <outlet property="delegate" destination="xAT-kW-XBp" id="Cbg-Q9-wLB"/>
                                 </connections>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="happy-minion.png" translatesAutoresizingMaskIntoConstraints="NO" id="xfF-nI-gNi">
+                                <rect key="frame" x="151" y="242" width="300" height="300"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xfF-nI-gNi" firstAttribute="centerX" secondItem="tJe-qZ-MQP" secondAttribute="centerX" id="0TR-bC-Lgs"/>
                             <constraint firstItem="tJe-qZ-MQP" firstAttribute="top" secondItem="cVZ-f0-T5K" secondAttribute="bottom" constant="8" symbolic="YES" id="BlI-ru-7cg"/>
                             <constraint firstItem="cVZ-f0-T5K" firstAttribute="top" secondItem="tIw-V2-j7S" secondAttribute="bottom" constant="65" id="Cxv-hl-Ke6"/>
                             <constraint firstItem="cVZ-f0-T5K" firstAttribute="centerX" secondItem="tJe-qZ-MQP" secondAttribute="centerX" id="Dp3-pg-SEU"/>
+                            <constraint firstItem="xfF-nI-gNi" firstAttribute="top" secondItem="tJe-qZ-MQP" secondAttribute="bottom" constant="8" id="E1F-b0-sdc"/>
                             <constraint firstItem="cVZ-f0-T5K" firstAttribute="centerX" secondItem="lKt-G3-8I0" secondAttribute="centerX" id="aHY-Xi-jlh"/>
                         </constraints>
                     </view>
@@ -225,10 +230,16 @@
                         <connections>
                             <outlet property="dataSource" destination="PNQ-sD-oTX" id="eOx-Zt-PIX"/>
                             <outlet property="delegate" destination="PNQ-sD-oTX" id="6Xv-ec-JqT"/>
+                            <outletCollection property="gestureRecognizers" destination="CYh-6M-Or3" appends="YES" id="Gkl-Ex-KNF"/>
                         </connections>
                     </collectionView>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCo-EC-gwU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="CYh-6M-Or3">
+                    <connections>
+                        <action selector="handleLongPress:" destination="PNQ-sD-oTX" id="bei-vd-fIU"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1376.25" y="-240.8450704225352"/>
         </scene>
@@ -253,4 +264,7 @@
             <point key="canvasLocation" x="600" y="69.718309859154928"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="happy-minion.png" width="300" height="300"/>
+    </resources>
 </document>

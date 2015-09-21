@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class MSDataSource;
 
 @interface MSAddViewController : UIViewController
+
+@property (nonatomic, strong) MSDataSource *dataSource;
 
 @end

@@ -9,13 +9,11 @@
 #import "MSTableViewController.h"
 #import "MSContent.h"
 #import "MSContentCell.h"
-#import "MSContentManager.h"
+#import "MSDataSource.h"
 
 NSString *const MSTableViewControllerIdentifier = @"MSTableViewControllerIdentifier";
 
-@interface MSTableViewController () <UITableViewDataSource, MSModelsDataSourceDelegate>
-
-@property (nonatomic, strong) MSContentManager *allContent;
+@interface MSTableViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 
 @end
 
@@ -23,28 +21,59 @@ NSString *const MSTableViewControllerIdentifier = @"MSTableViewControllerIdentif
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.allContent = [[MSContentManager alloc] initWithDelegate:self];
+     self.dataSource = [[MSDataSource alloc] initWithDelegate:self];
 }
 
 #pragma mark - UITableViewDataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-   return [self.allContent contentCount];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+   return [self.dataSource contentCount];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MSContentCell *cell = [tableView dequeueReusableCellWithIdentifier:MSContentCellIdentifier forIndexPath:indexPath];
-    
-    [cell setContent:[self.allContent contentAtIndex:indexPath.row]];
+    [cell setContent:[self.dataSource contentAtIndexPath:indexPath]];
     
     return cell;
 }
 
-#pragma mark - MSModelsDataSourceDelegate
-
-- (void)dataWasChanged:(MSContentManager *)data{
-    [self.tableView reloadData];
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.dataSource deleteModelAtIndexPath:indexPath];
+    }
 }
 
+#pragma mark - NSFetchedResultsControllerDelegate
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView beginUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    UITableView *tableView = self.tableView;
+    
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            break;
+    }
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView endUpdates];
+}
 
 @end

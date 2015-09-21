@@ -8,13 +8,12 @@
 
 #import "MSAddViewController.h"
 #import "MSContentValidator.h"
-#import "MSContentManager.h"
-#import "MSContentFactory.h"
+#import "MSDataSource.h"
+
 
 @interface MSAddViewController () <UITableViewDelegate>
 
-
-@property (weak, nonatomic) IBOutlet UITextField *addTextField;
+@property (nonatomic, weak) IBOutlet UITextField *addTextField;
 @property (nonatomic, strong) MSContentValidator *validator;
 
 @end
@@ -25,11 +24,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.validator = [[MSContentValidator alloc] init];
+    
 }
 
 #pragma mark - Methods
 
-- (void)validateInputText{
+- (void)validateInputText {
     NSError *error = nil;
     
     BOOL isValid = [self.validator isValidContentText:self.addTextField.text error:&error];
@@ -41,7 +41,6 @@
                                                   otherButtonTitles:nil];
         [alertView show];
 
-        
     } else {
         [self saveNewItem];
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
@@ -55,12 +54,10 @@
     }
 }
 
-- (void)saveNewItem{
-    MSContentManager *contentManager = [[MSContentManager alloc] init];
-    [contentManager saveModel:[MSContentFactory contentWithImageName:@"newItem.jpg"
-                                                                text:self.addTextField.text]];
+- (void)saveNewItem {
+    self.dataSource = [[MSDataSource alloc] init];
+    [self.dataSource saveModelWithImageName: @"newItem.jpg" text:self.addTextField.text];
 }
-
 
 #pragma mark - Actions
 
@@ -74,6 +71,5 @@
     [self validateInputText];
     return NO;
 }
-
 
 @end

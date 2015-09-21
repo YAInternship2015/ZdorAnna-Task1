@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MSContentCell.h"
+@class MSDataSource;
 
 extern NSString *const MSTableViewControllerIdentifier;
 
-@interface MSTableViewController : UITableViewController
+@interface MSTableViewController : UITableViewController 
+
+@property (nonatomic, strong) MSDataSource *dataSource;
 
 @end
 

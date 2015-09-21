@@ -9,9 +9,9 @@
 #import "MSContentCell.h"
 #import "MSContent.h"
 
-NSString* const MSContentCellIdentifier = @"MSContentCellIdentifier";
+NSString *const MSContentCellIdentifier = @"MSContentCellIdentifier";
 
-@interface MSContentCell()
+@interface MSContentCell ()
 
 @property (nonatomic, weak) IBOutlet UIImageView *contentImage;
 @property (nonatomic, weak) IBOutlet UILabel *contentText;
@@ -22,7 +22,7 @@ NSString* const MSContentCellIdentifier = @"MSContentCellIdentifier";
 
 - (void)setContent:(MSContent *)content {
     self.contentText.text = content.text;
-    self.contentImage.image = content.image;
+    self.contentImage.image = [UIImage imageNamed:content.imageName];
 }
 
 @end

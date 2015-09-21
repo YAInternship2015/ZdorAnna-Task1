@@ -9,9 +9,9 @@
 #import "MSCollectionViewCell.h"
 #import "MSContent.h"
 
-NSString* const MSCollectionCellIdentifier = @"MSCollectionCellIdentifier";
+NSString *const MSCollectionCellIdentifier = @"MSCollectionCellIdentifier";
 
-@interface MSCollectionViewCell()
+@interface MSCollectionViewCell ()
 
 @property (nonatomic, weak) IBOutlet UIImageView *contentImage;
 
@@ -20,7 +20,7 @@ NSString* const MSCollectionCellIdentifier = @"MSCollectionCellIdentifier";
 @implementation MSCollectionViewCell
 
 - (void)setContent:(MSContent *)content {
-    self.contentImage.image = content.image;
+    self.contentImage.image = [UIImage imageNamed:content.imageName];
 }
 
 @end
