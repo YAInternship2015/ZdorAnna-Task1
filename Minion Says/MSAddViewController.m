@@ -43,6 +43,7 @@
 
     } else {
         [self saveNewItem];
+#warning @"Minion say: %@" надо перенести в Localizable.strings
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
                                                             message:[NSString stringWithFormat:@"Minion say: %@",
                                                                      self.addTextField.text]
@@ -56,6 +57,7 @@
 
 - (void)saveNewItem {
     self.dataSource = [[MSDataSource alloc] init];
+#warning имя дефолтной картинки я бы вынес в константы
     [self.dataSource saveModelWithImageName: @"newItem.jpg" text:self.addTextField.text];
 }
 

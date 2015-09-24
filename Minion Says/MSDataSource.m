@@ -20,6 +20,7 @@
 
 @implementation MSDataSource
 
+#warning этого можно не писать
 @synthesize managedObjectContext = _managedObjectContext;
 
 - (instancetype)initWithDelegate:(id<NSFetchedResultsControllerDelegate>)delegate {
@@ -30,6 +31,7 @@
     return self;
 }
 
+#warning - (NSManagedObjectContext *)managedObjectContext
 - (NSManagedObjectContext*) managedObjectContext {
     if (!_managedObjectContext) {
         _managedObjectContext = [[MSManeger sharedManager] managedObjectContext];
@@ -95,6 +97,7 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"MSContent"
                                               inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
+#warning цифру 20 надо вынести в константы
     [fetchRequest setFetchBatchSize:20];
     
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"text" ascending:NO];

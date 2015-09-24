@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+#warning не самое удачное имя, непонятно, чем класс занимается. И с опечаткой)) Лучше MSCoreDataManager
 @interface MSManeger : NSObject
 
 @property (nonatomic, strong, readonly) NSManagedObjectContext *managedObjectContext;
