@@ -10,6 +10,7 @@
 #import "MSContentValidator.h"
 #import "MSDataSource.h"
 
+static NSString *const defaultImage = @"newItem.jpg";
 
 @interface MSAddViewController () <UITableViewDelegate>
 
@@ -43,9 +44,9 @@
 
     } else {
         [self saveNewItem];
-#warning @"Minion say: %@" надо перенести в Localizable.strings
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
-                                                            message:[NSString stringWithFormat:@"Minion say: %@",
+                                                            message:[NSString stringWithFormat:
+                                                                     NSLocalizedString(@"Minion say: %@", @"Minion say"),
                                                                      self.addTextField.text]
                                                            delegate:nil
                                                   cancelButtonTitle:NSLocalizedString(@"OK", @"")
@@ -57,8 +58,7 @@
 
 - (void)saveNewItem {
     self.dataSource = [[MSDataSource alloc] init];
-#warning имя дефолтной картинки я бы вынес в константы
-    [self.dataSource saveModelWithImageName: @"newItem.jpg" text:self.addTextField.text];
+    [self.dataSource saveModelWithImageName:defaultImage text:self.addTextField.text];
 }
 
 #pragma mark - Actions

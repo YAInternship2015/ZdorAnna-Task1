@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-#warning не самое удачное имя, непонятно, чем класс занимается. И с опечаткой)) Лучше MSCoreDataManager
-@interface MSManeger : NSObject
+@interface MSCoreDataManager : NSObject
 
 @property (nonatomic, strong, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong, readonly) NSManagedObjectModel *managedObjectModel;
@@ -19,6 +18,6 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
-+ (MSManeger*) sharedManager;
++ (MSCoreDataManager*) sharedManager;
 
 @end

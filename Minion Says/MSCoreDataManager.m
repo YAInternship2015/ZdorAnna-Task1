@@ -6,18 +6,20 @@
 //  Copyright (c) 2015 anna. All rights reserved.
 //
 
-#import "MSManeger.h"
+#import "MSCoreDataManager.h"
+#import "MSContent.h"
+static NSString *kItWasFilledCoreDataDB = @"itWasFilledCoreDataDB";
+static NSString *const URLByAppendingPathComponentForStoreURL = @"MSContentModel.sqlite";
 
-static NSString *kArrayWithContentOfPlist = @"arrayWithContentOfPlist";
 
-@interface MSManeger ()
+@interface MSCoreDataManager ()
 
-@property (strong, nonatomic) NSArray *arrayWithContentOfPlist;
+@property (assign, nonatomic) BOOL itWasFilledCoreDataDB;
 
 @end
 
 
-@implementation MSManeger
+@implementation MSCoreDataManager
 
 #pragma mark - Core Data stack
 
@@ -25,35 +27,33 @@ static NSString *kArrayWithContentOfPlist = @"arrayWithContentOfPlist";
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
-+ (MSManeger *)sharedManager {
-#warning static MSManeger *manager = nil;
-    static MSManeger* manager = nil;
++ (MSCoreDataManager *)sharedManager {
+    static MSCoreDataManager *manager = nil;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        manager = [[MSManeger alloc] init];
+        manager = [[MSCoreDataManager alloc] init];
     });
     
     return manager;
 }
 
-#warning неудачное имя метода, лучше fillCoreDataDBWithInitialModels
-- (void)resavingDataFromPlistToCoreData {
+- (void)fillCoreDataDBWithInitialModels {
     
     NSManagedObjectModel *managedObjectModel = [self managedObjectModel];
     NSDictionary *attributesDictionary = [[[managedObjectModel entitiesByName] objectForKey:@"MSContent"] attributesByName];
-    self.arrayWithContentOfPlist = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Content"
-                                                                                                      ofType : @"plist"]];
-#warning вокруг "=" должны быть пробелы
-    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-#warning зечем в NSUserDefaults хранить массив? Достаточно положить туда булевый флажок
-    [defaults setObject:self.arrayWithContentOfPlist forKey:kArrayWithContentOfPlist];
+    NSArray *arrayWithContentOfPlist = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Content"
+                                                                                                      ofType:@"plist"]];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.itWasFilledCoreDataDB = YES;
+    [defaults setBool:self.itWasFilledCoreDataDB forKey:kItWasFilledCoreDataDB];
     [defaults synchronize];
 
-    for (NSDictionary *keyedValueDictionary in self.arrayWithContentOfPlist) {
+    for (NSDictionary *keyedValueDictionary in arrayWithContentOfPlist) {
         NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:@"MSContent"
                                                                   inManagedObjectContext:[self managedObjectContext]];
-#warning Лютый кусок кода. Можно было просто привести managedObject к типу MSContent и заполнить как обычно
+        
+        
         for (NSString *attribute in attributesDictionary) {
             id value = [keyedValueDictionary objectForKey:attribute] ;
             if (value == nil) {
@@ -65,7 +65,7 @@ static NSString *kArrayWithContentOfPlist = @"arrayWithContentOfPlist";
                 ([value isKindOfClass:[NSNumber class]])) {
                 
                 value = [value stringValue];
-                    
+                
             } else if (((attributeType == NSInteger16AttributeType) ||
                         (attributeType == NSInteger32AttributeType) ||
                         (attributeType == NSInteger64AttributeType) ||
@@ -82,9 +82,10 @@ static NSString *kArrayWithContentOfPlist = @"arrayWithContentOfPlist";
             [managedObject setValue:value forKey:attribute];
         }
     }
-#warning смысл в этом error, если он затем не обрабатывается
-    NSError * error;
-    [[self managedObjectContext] save:&error];
+    NSError *error = nil;
+    if (![[self managedObjectContext] save:&error]) {
+        NSLog(@"%@, %@", error, [error userInfo]);
+    }
 }
 
 
@@ -108,8 +109,7 @@ static NSString *kArrayWithContentOfPlist = @"arrayWithContentOfPlist";
     }
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-#warning @"MSContentModel.sqlite" - в константы
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"MSContentModel.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:URLByAppendingPathComponentForStoreURL];
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
@@ -118,8 +118,7 @@ static NSString *kArrayWithContentOfPlist = @"arrayWithContentOfPlist";
         dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";
         dict[NSLocalizedFailureReasonErrorKey] = failureReason;
         dict[NSUnderlyingErrorKey] = error;
-#warning @"YOUR_ERROR_DOMAIN" :)
-        error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
+        error = [NSError errorWithDomain:@"MSContentDomain" code:9999 userInfo:dict];
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
@@ -137,11 +136,10 @@ static NSString *kArrayWithContentOfPlist = @"arrayWithContentOfPlist";
     }
     _managedObjectContext = [[NSManagedObjectContext alloc] init];
     [_managedObjectContext setPersistentStoreCoordinator:coordinator];
-#warning вокруг "=" должны быть пробелы
-    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-    if (![defaults objectForKey:kArrayWithContentOfPlist]) {
-        [self resavingDataFromPlistToCoreData];
+    if (![defaults boolForKey:kItWasFilledCoreDataDB]) {
+        [self fillCoreDataDBWithInitialModels];
     }
     
     return _managedObjectContext;

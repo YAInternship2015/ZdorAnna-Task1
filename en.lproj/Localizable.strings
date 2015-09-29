@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Minion Says
+
+  Created by anna on 9/29/15.
+  Copyright (c) 2015 anna. All rights reserved.
+*/
+
+    "Minion say: %@" = "Minion say";
+
+    "Input Validation Failed" = "Input Validation Failed";
+
+    "Number of characters is less than three" = "Number of characters is less than three";

@@ -17,8 +17,8 @@
 - (BOOL)isValidContentText:(NSString *)text error:(NSError **)error{
     if (text.length < MSContentTextMinLength) {
         if (error) {
-            NSString *description = NSLocalizedString(@"Input Validation Failed", @"");
-            NSString *reason = NSLocalizedString(@"Number of characters is less than three", @"");
+            NSString *description = NSLocalizedString(@"Input Validation Failed", @"Input Validation Failed");
+            NSString *reason = NSLocalizedString(@"Number of characters is less than three", @"Number of characters is less than three");
             
             NSDictionary *userInfo = @{
                                        NSLocalizedDescriptionKey : description,

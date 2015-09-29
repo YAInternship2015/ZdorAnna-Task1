@@ -17,6 +17,7 @@
 		953F0E881B94B2D700527EBA /* MSContentValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 953F0E871B94B2D700527EBA /* MSContentValidator.m */; };
 		953F0E8B1B94B53400527EBA /* MSAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953F0E8A1B94B53400527EBA /* MSAddViewController.m */; };
 		953F0E8E1B94B79000527EBA /* MSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953F0E8D1B94B79000527EBA /* MSMainViewController.m */; };
+		956CDA3C1BBAC4A8004FF25A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 956CDA3B1BBAC4A8004FF25A /* Localizable.strings */; };
 		957319761B95A53F007AED5D /* Content.plist in Resources */ = {isa = PBXBuildFile; fileRef = 957319751B95A53F007AED5D /* Content.plist */; };
 		9573197C1B9770D2007AED5D /* newItem.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9573197B1B9770D2007AED5D /* newItem.jpg */; };
 		9573197F1B977C66007AED5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9573197D1B977C66007AED5D /* Main.storyboard */; };
@@ -38,7 +39,7 @@
 		95CB89C61B7CAC2700ADEBA5 /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95CB89BC1B7CAC2700ADEBA5 /* 8.jpg */; };
 		95CB89C71B7CAC2700ADEBA5 /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95CB89BD1B7CAC2700ADEBA5 /* 9.jpg */; };
 		95CB89CE1B7CBEE000ADEBA5 /* MSDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CB89CD1B7CBEE000ADEBA5 /* MSDataSource.m */; };
-		95CE8EC01BB084F4003BC73B /* MSManeger.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CE8EBF1BB084F4003BC73B /* MSManeger.m */; };
+		95CE8EC01BB084F4003BC73B /* MSCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CE8EBF1BB084F4003BC73B /* MSCoreDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		953F0E8A1B94B53400527EBA /* MSAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSAddViewController.m; sourceTree = "<group>"; };
 		953F0E8C1B94B79000527EBA /* MSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMainViewController.h; sourceTree = "<group>"; };
 		953F0E8D1B94B79000527EBA /* MSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMainViewController.m; sourceTree = "<group>"; };
+		956CDA3B1BBAC4A8004FF25A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		957319751B95A53F007AED5D /* Content.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Content.plist; sourceTree = "<group>"; };
 		9573197B1B9770D2007AED5D /* newItem.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newItem.jpg; sourceTree = "<group>"; };
 		9573197E1B977C66007AED5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -98,8 +100,8 @@
 		95CB89BD1B7CAC2700ADEBA5 /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
 		95CB89CC1B7CBEE000ADEBA5 /* MSDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDataSource.h; sourceTree = "<group>"; };
 		95CB89CD1B7CBEE000ADEBA5 /* MSDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDataSource.m; sourceTree = "<group>"; };
-		95CE8EBE1BB084F4003BC73B /* MSManeger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSManeger.h; sourceTree = "<group>"; };
-		95CE8EBF1BB084F4003BC73B /* MSManeger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSManeger.m; sourceTree = "<group>"; };
+		95CE8EBE1BB084F4003BC73B /* MSCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCoreDataManager.h; sourceTree = "<group>"; };
+		95CE8EBF1BB084F4003BC73B /* MSCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCoreDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		95CB897B1B7CA74500ADEBA5 = {
 			isa = PBXGroup;
 			children = (
+				956CDA3B1BBAC4A8004FF25A /* Localizable.strings */,
 				950A03BE1BB02E82000C2103 /* UIKit.framework */,
 				950A03BC1BB02E78000C2103 /* CoreData.framework */,
 				95CB89861B7CA74500ADEBA5 /* Minion Says */,
@@ -250,8 +253,8 @@
 			children = (
 				95CB89CC1B7CBEE000ADEBA5 /* MSDataSource.h */,
 				95CB89CD1B7CBEE000ADEBA5 /* MSDataSource.m */,
-				95CE8EBE1BB084F4003BC73B /* MSManeger.h */,
-				95CE8EBF1BB084F4003BC73B /* MSManeger.m */,
+				95CE8EBE1BB084F4003BC73B /* MSCoreDataManager.h */,
+				95CE8EBF1BB084F4003BC73B /* MSCoreDataManager.m */,
 			);
 			name = "Data Source";
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 		95CB897C1B7CA74500ADEBA5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MS;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = anna;
 				TargetAttributes = {
@@ -349,6 +353,7 @@
 				95CB89C51B7CAC2700ADEBA5 /* 7.jpg in Resources */,
 				95CB89C71B7CAC2700ADEBA5 /* 9.jpg in Resources */,
 				951036141B9860A7008BF7EA /* happy-minion.png in Resources */,
+				956CDA3C1BBAC4A8004FF25A /* Localizable.strings in Resources */,
 				95CB89BF1B7CAC2700ADEBA5 /* 10.jpg in Resources */,
 				95CB89981B7CA74500ADEBA5 /* LaunchScreen.xib in Resources */,
 			);
@@ -376,7 +381,7 @@
 				95241BFC1B8E4E55007246A3 /* MSCollectionViewController.m in Sources */,
 				950A03451BAFF52D000C2103 /* MSContentModel.xcdatamodeld in Sources */,
 				95942FE41B8EFC6F000DE0C6 /* MSCollectionViewCell.m in Sources */,
-				95CE8EC01BB084F4003BC73B /* MSManeger.m in Sources */,
+				95CE8EC01BB084F4003BC73B /* MSCoreDataManager.m in Sources */,
 				953F0E8E1B94B79000527EBA /* MSMainViewController.m in Sources */,
 				953F0E8B1B94B53400527EBA /* MSAddViewController.m in Sources */,
 				950A03831BB00869000C2103 /* MSContent.m in Sources */,
